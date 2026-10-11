@@ -8,7 +8,9 @@ Jeden príkaz pripraví tvoj notebook: nainštaluje, čo chýba, prihlási ťa d
 2. **Pozvánka do Claude.** V e-maile od Anthropic prijmi pozvánku a prihlás sa pracovným e-mailom.
 3. **Heslo k notebooku** maj po ruke — inštalácia si ho môže vypýtať.
 
-## Mac
+> **Použi len príkaz pre svoj počítač.** Mac → príkaz z časti *Mac* (do Terminalu). Windows → príkaz z časti *Windows* (do PowerShellu). Príkaz pre Mac na Windows nefunguje.
+
+## Mac (Apple)
 
 Otvor aplikáciu **Terminal** (Cmd + medzerník, napíš *Terminal*, Enter). Skopíruj celý riadok, vlož ho do Terminalu (Cmd + V) a stlač Enter:
 
@@ -16,7 +18,7 @@ Otvor aplikáciu **Terminal** (Cmd + medzerník, napíš *Terminal*, Enter). Sko
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/TAKTIK-GROUP/kontext-start/main/priprav.sh)"
 ```
 
-## Windows
+## Windows (nie Mac)
 
 Otvor **PowerShell** (tlačidlo Štart, napíš *PowerShell*, Enter — nie „ako správca“). Skopíruj celý riadok, vlož ho (pravé tlačidlo myši alebo Ctrl + V) a stlač Enter:
 
@@ -43,3 +45,5 @@ Keď sa Windows opýta, či povoliť zmeny v zariadení, klikni **Áno**.
 ## Keď niečo nejde
 
 Príkaz skončí riadkom **`PRIPRAVA: CHYBA …`** a krátkym vysvetlením. Pošli tento riadok správcovi (pokojne aj s fotkou obrazovky) — podľa neho vie, kde je problém. Nič nemaž a nič nepresúvaj ručne.
+
+Ak sa na Windows zobrazí **„bash is not recognized“** alebo **„cannot be found that matches parameter name 'fsSL'“**, vložil(a) si príkaz pre Mac. Použi príkaz z časti *Windows*.
