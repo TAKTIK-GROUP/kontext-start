@@ -81,6 +81,8 @@ function Invoke-KontextPriprava {
       Ok ($t.Name + ' je nainštalovaný')
     }
     $Code = Find-Code
+    & $Code --install-extension $Extension *> $null
+    if ($LASTEXITCODE -eq 0) { Ok 'rozšírenie Claude Code' } else { Info 'Rozšírenie Claude Code nainštaluješ vo VS Code (ponúkne ho samo).' }
 
     Say '5/6 Prihlásenie do GitHubu'
     & gh auth status --hostname github.com *> $null
@@ -151,8 +153,6 @@ function Invoke-KontextPriprava {
       Ok ($r + ' stiahnutý do ' + $target)
     }
 
-    & $Code --install-extension $Extension *> $null
-    if ($LASTEXITCODE -eq 0) { Ok 'rozšírenie Claude Code' } else { Info 'Rozšírenie Claude Code nainštaluješ vo VS Code (ponúkne ho samo).' }
     foreach ($r in $repos) { & $Code (Join-Path $Dir $r) }
 
     Say 'Hotovo. Vo VS Code sa otvorila tvoja oblasť. Posledné kroky:'

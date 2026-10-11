@@ -127,6 +127,8 @@ else
   ok 'VS Code je nainštalovaný'
 fi
 
+"$CODE" --install-extension "$EXTENSION" >/dev/null 2>&1 && ok 'rozšírenie Claude Code' || info 'Rozšírenie Claude Code nainštaluješ vo VS Code (ponúkne ho samo).'
+
 # 5. GitHub login, organization, Git identity
 say '5/6 Prihlásenie do GitHubu'
 if gh auth status --hostname github.com >/dev/null 2>&1; then
@@ -202,7 +204,6 @@ for r in "$@"; do
   fi
 done
 
-"$CODE" --install-extension "$EXTENSION" >/dev/null 2>&1 && ok 'rozšírenie Claude Code' || info 'Rozšírenie Claude Code nainštaluješ vo VS Code (ponúkne ho samo).'
 for r in "$@"; do "$CODE" "$DIR/$r" >/dev/null 2>&1; done
 
 say 'Hotovo. Vo VS Code sa otvorila tvoja oblasť. Posledné kroky:'
